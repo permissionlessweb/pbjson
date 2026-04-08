@@ -12,6 +12,6 @@ panic = "abort"
 panic = "abort"
 
 [dependencies]
-informalsystems-pbjson = { path = "../pbjson", default-features = false }
-informalsystems-pbjson-types = { path = "../pbjson-types", default-features = false }
+informalsystems-pbjson = { git = "https://github.com/permissionlessweb/pbjson", branch = "zk-mvp", default-features = false }
+informalsystems-pbjson-types = { git = "https://github.com/permissionlessweb/pbjson", branch = "zk-mvp", default-features = false }
 
