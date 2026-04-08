@@ -29,5 +29,5 @@ serde = { version = "1.0", features = ["derive"], default-features = false }
 serde_json = { version = "1.0", default-features = false, features = ["alloc"] }
 
 [build-dependencies]
-informalsystems-pbjson-build = { path = "../pbjson-build", version = "0.7.0" }
+informalsystems-pbjson-build = { path = "../pbjson-build" }
 prost-build = "0.14.1"
