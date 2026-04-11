@@ -15,19 +15,26 @@ name = "pbjson_types"
 
 [features]
 default = ["std"]
-std = ["bytes/std", "chrono/std", "informalsystems-pbjson/std", "prost/std", "serde/std", "serde_json/std"]
+std = [
+    "bytes/std",
+    "chrono/std",
+    "informalsystems-pbjson/std",
+    "prost/std",
+    "serde/std",
+    "serde_json/std",
+]
 
 [dependencies] # In alphabetical order
-informalsystems-pbjson = { path = "../pbjson", version = "0.7.0" , default-features = false }
+informalsystems-pbjson = { path = "../pbjson", version = "0.7.0", default-features = false }
 
 bytes = { version = "1.0", default-features = false }
 chrono = { version = "0.4", default-features = false, features = ["alloc"] }
 prost = { version = "0.14.1", default-features = false, features = ["derive"] }
 serde = { version = "1.0", features = ["derive"], default-features = false }
 
-[dev-dependencies]
-serde_json = { version = "1.0", default-features = false, features = ["alloc"] }
-
 [build-dependencies]
 informalsystems-pbjson-build = { git = "https://github.com/permissionlessweb/pbjson", branch = "zk-mvp" }
 prost-build = "0.14.1"
+
+[dev-dependencies]
+serde_json = { version = "1.0", default-features = false, features = ["alloc"] }

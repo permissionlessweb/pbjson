@@ -10,25 +10,30 @@ publish = false
 [lib]
 name = "pbjson_test"
 
-[dependencies]
-prost = { version = "0.14.1", default-features = false, features = ["derive"] }
-informalsystems-pbjson = { git = "https://github.com/permissionlessweb/pbjson", branch = "zk-mvp", default-features = false }
-informalsystems-pbjson-types = { git = "https://github.com/permissionlessweb/pbjson", branch = "zk-mvp", default-features = false }
-serde = { version = "1.0", default-features = false, features = ["derive", "alloc"] }
-
 [features]
 default = ["std"]
-std = ["prost/std", "serde/std", "informalsystems-pbjson/std", "informalsystems-pbjson-types/std"]
+std = [
+    "prost/std",
+    "serde/std",
+    "informalsystems-pbjson/std",
+    "informalsystems-pbjson-types/std",
+]
 ignore-unknown-fields = []
 btree = []
 emit-fields = []
 use-integers-for-enums = []
 preserve-proto-field-names = []
 
+[dependencies]
+informalsystems-pbjson = { git = "https://github.com/permissionlessweb/pbjson", branch = "zk-mvp" }
+informalsystems-pbjson-types = { git = "https://github.com/permissionlessweb/pbjson", branch = "zk-mvp" }
+prost = { version = "0.14.1", default-features = false, features = ["derive"] }
+serde = { version = "1.0", default-features = false, features = ["derive", "alloc"] }
+
+[build-dependencies]
+informalsystems-pbjson-build = { git = "https://github.com/permissionlessweb/pbjson", branch = "zk-mvp" }
+prost-build = "0.14.1"
+
 [dev-dependencies]
 chrono = "0.4"
 serde_json = "1.0"
-
-[build-dependencies]
-prost-build = "0.14.1"
-informalsystems-pbjson-build = { git = "https://github.com/permissionlessweb/pbjson", branch = "zk-mvp" }
