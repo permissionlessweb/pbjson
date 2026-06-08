@@ -5,13 +5,13 @@ edition = "2021"
 publish = false
 description = "A library for testing no_std compatibility of pbjson"
 
+[dependencies]
+informalsystems-pbjson = { path = "../pbjson", default-features = false }
+informalsystems-pbjson-types = { path = "../pbjson-types", default-features = false }
+
 [profile.dev]
 panic = "abort"
 
 [profile.release]
 panic = "abort"
-
-[dependencies]
-informalsystems-pbjson = { git = "https://github.com/permissionlessweb/pbjson", branch = "zk-mvp", default-features = false }
-informalsystems-pbjson-types = { git = "https://github.com/permissionlessweb/pbjson", branch = "zk-mvp", default-features = false }
 

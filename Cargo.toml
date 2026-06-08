@@ -1,12 +1,10 @@
 [workspace]
-members = [
-    "pbjson",
-    "pbjson-build",
-    "pbjson-test",
-    "pbjson-types",
-]
+members = ["pbjson", "pbjson-build", "pbjson-test", "pbjson-types"]
 
-exclude = [
-  "pbjson-no-std"
-]
+exclude = ["pbjson-no-std"]
 resolver = "2"
+
+[patch.'https://github.com/permissionlessweb/pbjson']
+informalsystems-pbjson = { path = "pbjson" }
+informalsystems-pbjson-build = { path = "pbjson-build" }
+informalsystems-pbjson-types = { path = "pbjson-types" }
